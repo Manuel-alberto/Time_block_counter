@@ -38,9 +38,9 @@ class CountDown @Inject constructor() {
         timer.cancel()
     }
 
-    fun resumeCountdownTimer(listBlocksTime: List<TimeBlock>, onTick:(Long) -> Unit, onFinish: () -> Unit) {
+    /*fun resumeCountdownTimer(listBlocksTime: List<TimeBlock>, onTick:(Long) -> Unit, onFinish: () -> Unit) {
         isPaused = false
         init(listBlocksTime, { onTick() }, { onFinish.invoke() })
-    }
+    }*/
 
 }

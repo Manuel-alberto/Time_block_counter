@@ -29,13 +29,13 @@ class HomeActivity: AppCompatActivity() {
 
         viewModel.initTimer(list)
 
-        lifecycleScope.launch {
+        /*lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED){
                 viewModel.stateTime.collect{
                     binding.state.text = it
                 }
             }
-        }
+        }*/
 
     }
 }
