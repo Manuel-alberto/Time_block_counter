@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/common_padding_default"
+    app:cardCornerRadius="@dimen/common_padding_middle"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardElevation="@dimen/common_padding_middle">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/common_padding_min">
+
+        <ImageView
+            android:id="@+id/iconAction"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:contentDescription="IconAction"
+            android:src="@drawable/ic_watch"/>
+
+        <TextView
+            android:id="@+id/titleAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title Action"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/iconAction"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
