@@ -3,5 +3,17 @@
     <style name="Base.Theme.TimeBlockCounter" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="statusBarBackground">@color/white</item>
+    </style>
+
+    <style name="cardViewOption" parent="Widget.MaterialComponents.CardView">
+        <item name="android:padding">@dimen/common_padding_default</item>
+        <item name="cardCornerRadius">@dimen/common_padding_middle</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="cardElevation">@dimen/common_padding_min</item>
     </style>
 </resources>

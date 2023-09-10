@@ -3,18 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".TimeBlockCounterApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_time"
         android:label="@string/app_name"
-        android:name=".TimeBlockCounterApp"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_time_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TimeBlockCounter"
         tools:targetApi="31">
         <activity
-            android:name=".Home.HomeActivity"
+            android:name=".simplechronometer.SimpleChronometerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".routinesimple.RoutineSimpleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".routinecycled.RoutineCycledActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

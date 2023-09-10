@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.HomeActivity">
+
+    <include
+        android:id="@+id/mainHeaderApp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.25"
+        layout="@layout/main_header_app"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <include
+        android:id="@+id/itemSimpleChronometer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/item_option_main"
+        android:layout_margin="@dimen/common_padding_middle"
+        app:layout_constraintTop_toBottomOf="@id/mainHeaderApp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <include
+        android:id="@+id/itemSimpleRoutine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/item_option_main"
+        android:layout_margin="@dimen/common_padding_middle"
+        app:layout_constraintTop_toBottomOf="@id/itemSimpleChronometer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <include
+        android:id="@+id/itemCycledRoutine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/item_option_main"
+        android:layout_margin="@dimen/common_padding_middle"
+        app:layout_constraintTop_toBottomOf="@id/itemSimpleRoutine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

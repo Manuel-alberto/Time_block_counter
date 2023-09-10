@@ -1,8 +1,7 @@
-package com.neluam.timeblockcounter.Home
+package com.neluam.timeblockcounter.home
 
 import android.os.CountDownTimer
 import javax.inject.Inject
-import kotlin.system.measureTimeMillis
 
 class CountDown @Inject constructor() {
 
@@ -38,9 +37,9 @@ class CountDown @Inject constructor() {
         timer.cancel()
     }
 
-    fun resumeCountdownTimer(listBlocksTime: List<TimeBlock>, onTick:(Long) -> Unit, onFinish: () -> Unit) {
+    /*fun resumeCountdownTimer(listBlocksTime: List<TimeBlock>, onTick:(Long) -> Unit, onFinish: () -> Unit) {
         isPaused = false
         init(listBlocksTime, { onTick() }, { onFinish.invoke() })
-    }
+    }*/
 
 }
