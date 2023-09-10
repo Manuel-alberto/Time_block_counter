@@ -29,7 +29,7 @@
             android:id="@+id/titleAction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Title Action"
+            tools:text="Title Action"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/iconAction"
             app:layout_constraintTop_toTopOf="parent"

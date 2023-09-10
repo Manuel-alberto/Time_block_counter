@@ -6,19 +6,21 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.neluam.timeblockcounter.R
+import com.neluam.timeblockcounter.databinding.ActivityHomeBinding
 import com.neluam.timeblockcounter.databinding.ActivityMainBinding
+import com.neluam.timeblockcounter.extensions.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class HomeActivity: AppCompatActivity() {
+class HomeActivity: AppCompatActivity(R.layout.activity_home) {
 
-    private lateinit var binding: ActivityMainBinding
+    private val binding by viewBinding(ActivityHomeBinding::inflate)
     private val viewModel: HomeViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val list: List<TimeBlock> = listOf(
