@@ -1,8 +1,7 @@
-package com.neluam.timeblockcounter.Home
+package com.neluam.timeblockcounter.home
 
 import android.os.CountDownTimer
 import javax.inject.Inject
-import kotlin.system.measureTimeMillis
 
 class CountDown @Inject constructor() {
 

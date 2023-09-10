@@ -1,4 +1,4 @@
-package com.neluam.timeblockcounter.Home
+package com.neluam.timeblockcounter.home
 
 data class TimeBlock(
     val time: Long,

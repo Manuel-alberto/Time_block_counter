@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:padding="@dimen/common_padding_default"
     app:cardCornerRadius="@dimen/common_padding_middle"
     android:clickable="true"
@@ -23,14 +24,15 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:contentDescription="IconAction"
-            android:src="@drawable/ic_watch"/>
+            tools:src="@drawable/ic_watch"/>
 
         <TextView
             android:id="@+id/titleAction"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             tools:text="Title Action"
             android:textStyle="bold"
+            android:layout_marginStart="@dimen/common_padding_middle"
             app:layout_constraintStart_toEndOf="@id/iconAction"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
