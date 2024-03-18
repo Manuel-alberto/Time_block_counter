@@ -24,6 +24,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <include
+        android:id="@+id/itemSimpleTimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/item_option_main"
+        android:layout_margin="@dimen/common_padding_middle"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/itemSimpleChronometer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
     <include
         android:id="@+id/itemSimpleRoutine"
@@ -31,7 +42,8 @@
         android:layout_height="wrap_content"
         layout="@layout/item_option_main"
         android:layout_margin="@dimen/common_padding_middle"
-        app:layout_constraintTop_toBottomOf="@id/itemSimpleChronometer"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/itemSimpleTimer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -40,6 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         layout="@layout/item_option_main"
+        android:visibility="gone"
         android:layout_margin="@dimen/common_padding_middle"
         app:layout_constraintTop_toBottomOf="@id/itemSimpleRoutine"
         app:layout_constraintStart_toStartOf="parent"

@@ -4,39 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".simplechronometer.view.SimpleChronometerActivity">
+    tools:context=".simpletimer.view.SimpleTimerActivity"
+    android:padding="@dimen/common_padding_default">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animationChronometer"
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/common_padding_default"
-        app:lottie_rawRes="@raw/loader_chronometer"
-        app:lottie_loop="true"
-        app:lottie_autoPlay="false"
+        app:trackThickness="10dp"
+        app:indicatorSize="200dp"
+        tools:progress="50"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <Chronometer
-        android:id="@+id/chronometerText"
+    <TextView
+        android:id="@+id/timeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        tools:text="00:00:00"
         android:fontFamily="@font/ubuntu_light"
         android:textSize="@dimen/time_text_size"
-        app:layout_constraintEnd_toEndOf="@id/animationChronometer"
-        app:layout_constraintStart_toStartOf="@id/animationChronometer"
-        app:layout_constraintTop_toTopOf="@id/animationChronometer"
-        app:layout_constraintBottom_toBottomOf="@id/animationChronometer"/>
+        app:layout_constraintTop_toTopOf="@id/progressTime"
+        app:layout_constraintStart_toStartOf="@id/progressTime"
+        app:layout_constraintEnd_toEndOf="@id/progressTime"
+        app:layout_constraintBottom_toBottomOf="@id/progressTime"/>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/controlsChronometerContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/common_padding_default"
         app:cardCornerRadius="@dimen/common_padding_min"
-        app:layout_constraintTop_toBottomOf="@id/animationChronometer">
+        app:layout_constraintTop_toBottomOf="@id/progressTime">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -46,7 +45,7 @@
             android:padding="@dimen/common_padding_middle">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/playChronometer"
+                android:id="@+id/playTimer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -61,7 +60,7 @@
                 android:paddingTop="@dimen/common_padding_default">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/pauseChronometer"
+                    android:id="@+id/pauseTimer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/btn_pause_chronometer"
@@ -71,7 +70,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/resetChronometer"
+                    android:id="@+id/resetTimer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/btn_reset_chronometer"
@@ -85,49 +84,5 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/addLap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_add_lap"
-        app:icon="@drawable/ic_add"
-        android:layout_marginTop="@dimen/common_padding_middle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/controlsChronometerContainer"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-
-    <LinearLayout
-        android:id="@+id/lapsDetailsContainer"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        android:layout_margin="@dimen/common_padding_default"
-        app:layout_constraintTop_toBottomOf="@id/addLap"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" >
-
-        <include
-            android:id="@+id/headerLapsDetails"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            layout="@layout/item_lap_detail"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/black"
-            android:layout_marginHorizontal="@dimen/common_padding_default"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/lapsDetails"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:itemCount="4"
-            tools:listitem="@layout/item_lap_detail"/>
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

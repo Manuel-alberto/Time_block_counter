@@ -3,4 +3,14 @@
     <string name="option_simple_chronometer">Cronometro simple</string>
     <string name="option_simple_routine">Rutina de tiempo simple</string>
     <string name="option_cycled_routine">Rutinas de tiempo cicladas</string>
+    <string name="btn_play_chronometer">Comenzar</string>
+    <string name="btn_pause_chronometer">Pausar</string>
+    <string name="btn_stop_chronometer">Dentener</string>
+    <string name="btn_continue_chronometer">Continuar</string>
+    <string name="btn_reset_chronometer">Reiniciar</string>
+    <string name="option_simple_timer">Temporizador</string>
+    <string name="header_id_text">N. de vuelta</string>
+    <string name="header_time_text">Tiempo</string>
+    <string name="btn_add_lap">Vuelta</string>
+    <string name="icon_action">IconAction</string>
 </resources>

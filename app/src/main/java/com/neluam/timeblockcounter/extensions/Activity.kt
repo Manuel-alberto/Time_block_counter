@@ -1,6 +1,5 @@
 package com.neluam.timeblockcounter.extensions
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -13,6 +12,6 @@ inline fun <T : ViewBinding> AppCompatActivity.viewBinding(
     bindingInflater.invoke(layoutInflater)
 }
 
-fun Activity.navigateTo(intent: Intent, context: Context) {
+fun navigateTo(intent: Intent, context: Context) {
     context.startActivity(intent)
 }
