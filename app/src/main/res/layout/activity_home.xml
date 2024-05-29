@@ -30,7 +30,6 @@
         android:layout_height="wrap_content"
         layout="@layout/item_option_main"
         android:layout_margin="@dimen/common_padding_middle"
-        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/itemSimpleChronometer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

@@ -1,6 +1,7 @@
 package com.neluam.timeblockcounter.simpletimer.view
 
 import android.os.CountDownTimer
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.neluam.timeblockcounter.simpletimer.model.SimpleTimerUiState
 import com.neluam.timeblockcounter.simpletimer.model.SimpleTimerUiState.*
@@ -21,15 +22,15 @@ class SimpleTimerViewModel @Inject constructor(): ViewModel() {
     private var initialTimeMillis: Long = 0
     private var timeLeftMillis: Long = 0
 
-    private val _currentTime = MutableStateFlow("00:00:00")
+    private val _currentTime = MutableStateFlow("00:00:05")
     val currentTime  = _currentTime.asStateFlow()
 
-    private val _progressStatusTimer = MutableStateFlow(90)
+    private val _progressStatusTimer = MutableStateFlow(100)
     val progressStatusTimer = _progressStatusTimer.asStateFlow()
 
     fun startTimer(time: String) {
         if (!timerRunning) {
-            val timeParts = "00:00:10".split(":")
+            val timeParts = currentTime.value.split(":")
             val hours = timeParts[0].toLong()
             val minutes = timeParts[1].toLong()
             val seconds = timeParts[2].toLong()
@@ -40,8 +41,10 @@ class SimpleTimerViewModel @Inject constructor(): ViewModel() {
             countDownTimer = object : CountDownTimer(initialTimeMillis, 1000) {
                 override fun onTick(millisUntilFinished: Long) {
                     timeLeftMillis = millisUntilFinished
-                    _progressStatusTimer.value = getPercentageProgress(initialTimeMillis, timeLeftMillis)
-                    updateTimer()
+                    updateTimer(millisUntilFinished)
+                    _progressStatusTimer.value = getPercentageProgress(initialTimeMillis, millisUntilFinished)
+                    Log.e("timer", "$timeLeftMillis")
+                    Log.e("timer", "${_progressStatusTimer.value}")
                 }
 
                 override fun onFinish() {
@@ -80,10 +83,11 @@ class SimpleTimerViewModel @Inject constructor(): ViewModel() {
         }
     }
 
-    private fun updateTimer() {
-        val hours = (timeLeftMillis / 1000) / 3600
-        val minutes = ((timeLeftMillis / 1000) % 3600) / 60
-        val seconds = (timeLeftMillis / 1000) % 60
+    private fun updateTimer(time: Long) {
+
+        val hours = (time / 1000) / 3600
+        val minutes = ((time / 1000) % 3600) / 60
+        val seconds = (time / 1000) % 60
 
         val timeString = "${formatDigit(hours)}:${formatDigit(minutes)}:${formatDigit(seconds)}"
         _currentTime.value = timeString
