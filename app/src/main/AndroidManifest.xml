@@ -14,6 +14,17 @@
         android:theme="@style/Theme.TimeBlockCounter"
         tools:targetApi="31">
         <activity
+            android:name=".home.BaseHomeScreen"
+            android:exported="true"
+            android:label="@string/title_activity_base_home_screen"
+            android:theme="@style/Theme.TimeBlockCounter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".simplechronometer.SimpleChronometerActivity"
             android:exported="false" />
         <activity
