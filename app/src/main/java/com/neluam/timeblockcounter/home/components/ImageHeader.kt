@@ -1,4 +1,4 @@
-package com.neluam.timeblockcounter.home.items
+package com.neluam.timeblockcounter.home.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -16,6 +16,8 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.neluam.timeblockcounter.R
 import com.neluam.timeblockcounter.commons.ui.COMMON_PADDING_DEFAULT
+import com.neluam.timeblockcounter.commons.ui.NormalText
+import com.neluam.timeblockcounter.commons.ui.TitleText
 import com.neluam.timeblockcounter.home.ui.theme.GreenBlue
 
 
@@ -42,25 +44,21 @@ fun ImageHeader() {
             contentDescription = null
         )
 
-        Text(
+        TitleText(
             modifier = Modifier.constrainAs(hello){
                 top.linkTo(parent.top)
                 start.linkTo(parent.start)
             },
             text = "Hola!",
-            color = Color.White,
-            fontSize = 30.sp
         )
 
-        Text(
+        NormalText(
             modifier = Modifier.constrainAs(message){
                 top.linkTo(image.top)
                 bottom.linkTo(image.bottom)
                 start.linkTo(parent.start)
             },
             text = "¿Que desea hacer hoy?",
-            color = Color.White,
-            fontSize =15.sp
         )
 
     }

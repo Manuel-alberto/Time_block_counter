@@ -1,4 +1,4 @@
-package com.neluam.timeblockcounter.home.items
+package com.neluam.timeblockcounter.home.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -23,6 +23,8 @@ import androidx.compose.ui.unit.sp
 import com.neluam.timeblockcounter.R
 import com.neluam.timeblockcounter.commons.ui.COMMON_PADDING_DEFAULT
 import com.neluam.timeblockcounter.commons.ui.COMMON_PADDING_MIN
+import com.neluam.timeblockcounter.commons.ui.NormalText
+import com.neluam.timeblockcounter.commons.ui.SecondaryText
 
 @Preview(showBackground = true)
 @Composable
@@ -51,13 +53,11 @@ fun OptionMenuItem(
                 painter = painterResource(icon),
                 contentDescription = null,
             )
-            Text(
+            SecondaryText(
                 modifier = Modifier
                     .align(Alignment.CenterVertically)
                     .padding(COMMON_PADDING_MIN),
                 text = title,
-                fontSize = 15.sp,
-                fontWeight = Bold
             )
         }
     }
