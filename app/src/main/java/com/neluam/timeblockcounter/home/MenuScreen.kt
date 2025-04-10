@@ -16,10 +16,9 @@ import com.neluam.timeblockcounter.commons.ui.COMMON_PADDING_MIDDLE
 import com.neluam.timeblockcounter.home.components.ImageHeader
 import com.neluam.timeblockcounter.home.components.OptionMenuItem
 
-@Preview(showBackground = true, device = Devices.PIXEL_4, showSystemUi = true)
 @Composable
 fun MenuScreen(
-    sendToSimpleChronometer: PaddingValues = PaddingValues()
+    goToSimpleChronometer: () -> Unit,
 ){
     Column(
         modifier = Modifier
@@ -32,7 +31,14 @@ fun MenuScreen(
             icon =R.drawable.ic_watch,
             title = stringResource(R.string.option_simple_chronometer),
         ) {
+            goToSimpleChronometer()
         }
     }
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun PreviewMenuScreen() {
+    MenuScreen {  }
 }
 
